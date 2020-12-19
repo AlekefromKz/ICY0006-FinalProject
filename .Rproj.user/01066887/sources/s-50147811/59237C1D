@@ -1,0 +1,32 @@
+{
+    "id": "59237C1D",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1608382484564.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "expression": "predictions",
+        "caption": "predictions",
+        "totalObservations": 2000,
+        "displayedObservations": 2000,
+        "variables": 1,
+        "cacheKey": "9E88F3C5",
+        "object": "predictions",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=predictions&cache_key=9E88F3C5&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2245396809512,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1608382484564,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,75 @@
+# importing libraries
+library(readr)
+library(ggcorrplot)
+library(dplyr)
+library(ggpubr)
+
+
+# reading data
+data <- read_csv("train.csv")
+
+
+# variables
+BHK_NO. <- data$BHK_NO.
+SQUARE_FT<- data$SQUARE_FT
+PRICE <- data$`TARGET(PRICE_IN_LACS)`
+
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+# STAGE 1
+# data visualization 
+hist(BHK_NO.)
+hist(SQUARE_FT)
+hist(PRICE)
+
+
+# STAGE 2
+# central tendency measures
+mean(BHK_NO.)
+mean(SQUARE_FT)
+mean(PRICE)
+
+getmode(BHK_NO.)
+getmode(SQUARE_FT)
+getmode(PRICE)
+
+median(BHK_NO.)
+median(SQUARE_FT)
+median(PRICE)
+
+
+# variability measures
+range(BHK_NO.)
+range(SQUARE_FT)
+range(PRICE)
+
+IQR(BHK_NO.)
+IQR(SQUARE_FT)
+IQR(PRICE)
+
+var(BHK_NO.)
+var(SQUARE_FT)
+var(PRICE)
+
+sd(BHK_NO.)
+sd(SQUARE_FT)
+sd(PRICE)
+
+# STAGE 3
+onlynums <- data[ , unlist(lapply(data, is.numeric))]
+
+cor_area_price <- data %>% select(BHK_NO., SQUARE_FT, `TARGET(PRICE_IN_LACS)`, UNDER_CONSTRUCTION)
+
+corr <- cor(cor_area_price)
+print(corr)
+ggcorrplot(corr)
+
+
+cor(SQUARE_FT, PRICE)
+
+
+
+
