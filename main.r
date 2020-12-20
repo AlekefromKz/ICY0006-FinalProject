@@ -9,6 +9,7 @@ library(ggpubr)
 data <- read_csv("train.csv")
 test <- read_csv("test.csv")
 
+
 # variables
 PRICE <- data$PRICE
 AREA <- data$AREA
@@ -19,11 +20,12 @@ WINDOWS <- data$WINDOWS
 ROOMS <- data$ROOMS
 
 
-
+# get mode function
 getmode <- function(v) {
   uniqv <- unique(v)
   uniqv[which.max(tabulate(match(v, uniqv)))]
 }
+
 
 # STAGE 1
 # data visualization 
@@ -39,7 +41,7 @@ hist(ROOMS)
 
 # STAGE 2
 # central tendency measures
-mean(PRICE)
+# mean(PRICE)
 mean(AREA)
 mean(DISTANCE_F_C_C)
 mean(FLOOR)
@@ -104,15 +106,6 @@ sd(MAX_FLOOR)
 sd(WINDOWS)
 sd(ROOMS)
 
-
-# STAGE 3
-onlynums <- data[ , unlist(lapply(data, is.numeric))]
-
-cor_price_area <- data %>% select(PRICE, AREA, `PRICE`, 'AREA')
-
-corr <- cor(cor_price_area)
-print(corr)
-ggcorrplot(corr)
 
 
 
